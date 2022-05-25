@@ -1,4 +1,5 @@
 import React from "react";
+
 import CurrentLocationButton from "../../Components/CurrentLocationButton/CurrentLocationButton";
 
 import "./home-page.scss";

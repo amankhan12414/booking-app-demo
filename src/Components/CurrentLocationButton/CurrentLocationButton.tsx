@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { LocationContext } from "../../Contexts/LocationContext";
 import { ReactComponent as LocationIcon } from "../../Assets/location.svg";
 
 import "./current-location-button.scss";
 
-type Props = {};
+const CurrentLocationButton = () => {
+  const { userLocation, setUserLocation } = useContext(LocationContext);
 
-const CurrentLocationButton = (props: Props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -17,8 +18,10 @@ const CurrentLocationButton = (props: Props) => {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           setErrorMessage("");
-          console.log("lat ", position.coords.latitude);
-          console.log("lng ", position.coords.longitude);
+          setUserLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
           setIsLoading(false);
         },
         () => {
@@ -32,12 +35,14 @@ const CurrentLocationButton = (props: Props) => {
   return (
     <div>
       <button
-        className={`current-location-button ${isLoading && "loading"}`}
+        className={`current-location-button ${isLoading && "loading"} ${
+          userLocation && "complete"
+        }`}
         onClick={handleGetLocation}
-        disabled={isLoading}
+        disabled={isLoading || userLocation}
       >
         <LocationIcon fill="white" />
-        Use current location
+        {userLocation ? "Using your location" : "Use current location"}
       </button>
       {errorMessage && (
         <p className="current-location-error-message">{errorMessage}</p>

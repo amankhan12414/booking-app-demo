@@ -26,6 +26,16 @@
   }
 }
 
+.current-location-button:disabled.complete {
+  background-color: #ffffff;
+  color: #000000;
+  border: 3px solid #00bdad;
+  svg {
+    fill: #00bdad;
+    border-radius: 100px;
+  }
+}
+
 .current-location-error-message {
   color: #ff9595;
   margin: 0;
