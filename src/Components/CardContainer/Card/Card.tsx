@@ -5,6 +5,7 @@ import { getDistance } from "geolib";
 
 import "./card.scss";
 import BookingModal from "../../BookingModal/BookingModal";
+import { elementMultiplier } from "../../../Helpers/Utils/elementMultiplier";
 
 type Props = {
   restaurant: IRestaurant;
@@ -30,16 +31,6 @@ const Card = ({
     return distanceInMiles.toFixed(2);
   };
 
-  const iconMultiplier = (icon: string, multiplier: number): ReactElement => {
-    return (
-      <div>
-        {[...Array(multiplier)].map((index) => (
-          <span key={index}>{icon}</span>
-        ))}
-      </div>
-    );
-  };
-
   const handleModalClose = () => {
     setIsBookingModalOpen(false);
     document.body.style.overflow = "unset";
@@ -47,10 +38,14 @@ const Card = ({
 
   return (
     <div className="card-container">
-      <img src={image.fields.file.url} alt="Restaurant Logo" />
+      <img
+        className="main-image"
+        src={image.fields.file.url}
+        alt="Restaurant Logo"
+      />
       <div className="card-content">
         <h4>{name}</h4>
-        {iconMultiplier("★", starRating)}
+        {elementMultiplier("★", starRating)}
         <p>{cuizine}</p>
         <p>
           Distance:{" "}
@@ -60,14 +55,24 @@ const Card = ({
             "Location required"
           )}
         </p>
-        {iconMultiplier("£", averageCost)}
+        {elementMultiplier("£", averageCost)}
       </div>
       <button onClick={() => setIsBookingModalOpen(!isBookingModalOpen)}>
         More details
       </button>
 
       {isBookingModalOpen && (
-        <BookingModal handleCloseModal={handleModalClose} />
+        <BookingModal
+          handleCloseModal={handleModalClose}
+          restaurant={{
+            averageCost,
+            cuizine,
+            image,
+            location,
+            name,
+            starRating,
+          }}
+        />
       )}
     </div>
   );

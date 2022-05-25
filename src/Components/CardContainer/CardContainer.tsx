@@ -13,8 +13,8 @@ const CardContainer = (props: Props) => {
   return (
     <div className="card-container-container">
       {restaurants ? (
-        restaurants.map((restaurant: IRestaurant) => (
-          <Card restaurant={restaurant} />
+        restaurants.map((restaurant: IRestaurant, index: number) => (
+          <Card key={index} restaurant={restaurant} />
         ))
       ) : (
         <p>Unable to display, please try again later</p>

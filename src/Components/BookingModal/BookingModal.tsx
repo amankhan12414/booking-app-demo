@@ -1,20 +1,34 @@
 import React, { SetStateAction, useEffect } from "react";
+import { elementMultiplier } from "../../Helpers/Utils/elementMultiplier";
+import { IRestaurant } from "../../Pages/ResultsPage/RestaurantInterface";
+import Map from "../Map/Map";
 
 import "./booking-modal.scss";
 
 type Props = {
   handleCloseModal: () => void;
+  restaurant: IRestaurant;
 };
 
-const BookingModal = (props: Props) => {
+const BookingModal = ({
+  restaurant: { averageCost, cuizine, location, name, starRating },
+  handleCloseModal,
+}: Props) => {
   useEffect(() => {
     document.body.style.overflow = "hidden";
   });
 
   return (
-    <div className="booking-modal-container" onClick={props.handleCloseModal}>
-      <div className="map-container">map</div>
-      <div className="content-container">content</div>
+    <div className="booking-modal-container">
+      <Map restaurantLocation={location} />
+      <div className="content-container" onClick={handleCloseModal}>
+        <h3>{name}</h3>
+        <p>
+          Cuisine: <strong>{cuizine}</strong>{" "}
+        </p>
+        <p>Rating: {elementMultiplier("★", starRating)}</p>
+        <p>Average cost: {elementMultiplier("£", averageCost)}</p>
+      </div>
     </div>
   );
 };

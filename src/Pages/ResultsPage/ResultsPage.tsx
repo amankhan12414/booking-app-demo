@@ -24,8 +24,6 @@ const ResultsPage = () => {
     [restaurants, setRestaurants]
   );
 
-  console.log(restaurants);
-
   return (
     <div className="results-page-container">
       <RestaurantsContext.Provider value={restaurantProviderValues}>
