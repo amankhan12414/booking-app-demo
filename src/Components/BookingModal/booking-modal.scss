@@ -23,3 +23,19 @@
   justify-content: center;
 }
 
+@media only screen and (max-width: 760px) {
+  .booking-modal-container {
+    flex-direction: column;
+  }
+  .content-container {
+    margin-left: 0;
+    margin-top: 15px;
+    padding: 15px 60px;
+    width: 60%;
+    align-items: center;
+    h4 {
+      display: none;
+    }
+  }
+}
+

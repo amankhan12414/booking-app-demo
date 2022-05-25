@@ -31,11 +31,6 @@ const Card = ({
     return parseFloat(distanceInMiles.toFixed(2));
   };
 
-  const handleModalClose = () => {
-    setIsBookingModalOpen(false);
-    document.body.style.overflow = "unset";
-  };
-
   return (
     <div className="card-container">
       <img
@@ -57,13 +52,11 @@ const Card = ({
         </p>
         {elementMultiplier("£", averageCost)}
       </div>
-      <button onClick={() => setIsBookingModalOpen(!isBookingModalOpen)}>
-        More details
-      </button>
+      <button onClick={() => setIsBookingModalOpen(true)}>More details</button>
 
       {isBookingModalOpen && (
         <BookingModal
-          handleCloseModal={handleModalClose}
+          setIsBookingModalOpen={setIsBookingModalOpen}
           restaurant={{
             averageCost,
             cuizine,
