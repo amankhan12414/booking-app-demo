@@ -1,14 +1,11 @@
 import React, { useContext } from "react";
 import Card from "./Card/Card";
 import { RestaurantsContext } from "../../Helpers/Contexts/RestaurantsContext";
-
 import "./card-container.scss";
 import { IRestaurant } from "../../Pages/ResultsPage/RestaurantInterface";
 
-type Props = {};
-
-const CardContainer = (props: Props) => {
-  const { restaurants, setRestaurants } = useContext(RestaurantsContext);
+const CardContainer = () => {
+  const { restaurants } = useContext(RestaurantsContext);
 
   return (
     <div className="card-container-container">

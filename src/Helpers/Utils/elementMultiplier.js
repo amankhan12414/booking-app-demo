@@ -1,4 +1,6 @@
 export const elementMultiplier = (icon, multiplier) => {
-  return [...Array(multiplier)].map((index) => <span key={index}>{icon}</span>);
+  return [...Array(multiplier)].map((item, index) => (
+    <span key={index}>{icon}</span>
+  ));
 };
 

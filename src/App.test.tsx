@@ -1,9 +1,15 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+/* eslint-disable testing-library/no-node-access */
+import React from "react";
+import { render } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("App", () => {
+  it("should renders app", () => {
+    const { container } = render(<App />);
+    // eslint-disable-next-line testing-library/no-container
+    expect(container.getElementsByClassName("scroll-snap-wrapper").length).toBe(
+      1
+    );
+  });
 });
+
