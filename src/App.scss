@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+.App {
+  background-image: url("./Assets/bg-stock.jpg");
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 500;
+  margin: 0;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 300;
+  margin: 0;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0000009a;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 40px;
+  font-size: 20px;
+  height: 60px;
+  font-weight: 400;
+  transition: 200ms;
+  padding: 0 20px;
+  margin: 15px 0;
+  width: fit-content;
+}
+
+button:hover {
+  background-color: #ffffff;
+  cursor: pointer;
+  color: #000000;
+}
+
+button:disabled {
+  background-color: #3d3d3d;
+  cursor: not-allowed;
+  color: #888888;
+  border-color: #7e7e7e;
+}
+
