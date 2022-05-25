@@ -1,4 +1,4 @@
-import React, { SetStateAction, useEffect } from "react";
+import React, { useEffect } from "react";
 import { elementMultiplier } from "../../Helpers/Utils/elementMultiplier";
 import { IRestaurant } from "../../Pages/ResultsPage/RestaurantInterface";
 import Map from "../Map/Map";

@@ -1,4 +1,4 @@
-import React, { ReactElement, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { LocationContext } from "../../../Helpers/Contexts/LocationContext";
 import { IRestaurant } from "../../../Pages/ResultsPage/RestaurantInterface";
 import { getDistance } from "geolib";
@@ -18,17 +18,17 @@ const Card = ({
 
   const { userLocation } = useContext(LocationContext);
 
-  const getUserDistance = () => {
-    const locationDataAsFloats = {
-      lat: parseFloat(location.lat),
-      lng: parseFloat(location.lon),
-    };
+  const restaurantLocationAsFloats = {
+    lat: parseFloat(location.lat),
+    lng: parseFloat(location.lon),
+  };
+  const getUserDistance = (): number => {
     const distanceInMiles =
-      getDistance(locationDataAsFloats, {
+      getDistance(restaurantLocationAsFloats, {
         latitude: userLocation.lat,
         longitude: userLocation.lng,
       }) * 0.000621371192;
-    return distanceInMiles.toFixed(2);
+    return parseFloat(distanceInMiles.toFixed(2));
   };
 
   const handleModalClose = () => {
@@ -68,7 +68,7 @@ const Card = ({
             averageCost,
             cuizine,
             image,
-            location,
+            location: restaurantLocationAsFloats,
             name,
             starRating,
           }}
