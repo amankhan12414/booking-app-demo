@@ -16,8 +16,10 @@ function App() {
   return (
     <div className="App">
       <LocationContext.Provider value={locationProviderValues}>
-        <HomePage />
-        <ResultsPage />
+        <div className="scroll-snap-wrapper">
+          <HomePage />
+          <ResultsPage />
+        </div>
       </LocationContext.Provider>
     </div>
   );

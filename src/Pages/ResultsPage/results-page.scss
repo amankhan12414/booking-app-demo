@@ -1,7 +1,11 @@
 .results-page-container {
   backdrop-filter: blur(25px);
-  min-height: 100vh;
-  padding: 100px;
+  height: 100vh;
+  padding: 0 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: center;
 }
 
 @media only screen and (max-width: 600px) {

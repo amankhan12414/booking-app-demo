@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import "./booking-form.scss";
 
@@ -11,8 +11,6 @@ const BookingForm = ({ restaurantName }: Props) => {
   const [email, setEmail] = useState("");
 
   const [isError, setIsError] = useState(true);
-
-  console.log(isError);
 
   return (
     <div className="booking-form-container">
