@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { LocationContext } from "./Contexts/LocationContext";
+import { LocationContext } from "./Helpers/Contexts/LocationContext";
 import HomePage from "./Pages/HomePage/HomePage";
 import ResultsPage from "./Pages/ResultsPage/ResultsPage";
 import BookingPage from "./Pages/BookingPage/BookingPage";

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { LocationContext } from "../../Contexts/LocationContext";
+import { LocationContext } from "../../Helpers/Contexts/LocationContext";
 import { ReactComponent as LocationIcon } from "../../Assets/location.svg";
 
 import "./current-location-button.scss";
