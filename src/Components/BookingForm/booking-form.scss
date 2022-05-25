@@ -1,0 +1,36 @@
+.booking-form-container {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #00000030;
+  width: fit-content;
+  form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+    label {
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    input {
+      padding: 10px 10px;
+      border-radius: 10px;
+      border: 0px;
+      background-color: #9b9b9b65;
+      font-size: 15px;
+      transition: 200ms;
+    }
+
+    input:hover {
+      background-color: #d6d6d68c;
+    }
+
+    p {
+      font-size: 13px;
+      color: #c71a1a;
+      font-weight: 500;
+    }
+  }
+}
+

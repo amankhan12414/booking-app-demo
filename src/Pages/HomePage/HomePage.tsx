@@ -12,7 +12,6 @@ const HomePage = (props: Props) => {
       <h1>Hungry?</h1>
       <h2>Book a restaurant near you</h2>
       <CurrentLocationButton />
-      <button>Show me everything</button>
     </div>
   );
 };
