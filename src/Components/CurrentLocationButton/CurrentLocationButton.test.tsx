@@ -2,7 +2,6 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import CurrentLocationButton from "./CurrentLocationButton";
 import { LocationContext } from "../../Helpers/Contexts/LocationContext";
-import userEvent from "@testing-library/user-event";
 
 describe("Use current location button", () => {
   it("should render location button", () => {

@@ -1,7 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import BookingForm from "./BookingForm";
-import { LocationContext } from "../../Helpers/Contexts/LocationContext";
 import userEvent from "@testing-library/user-event";
 
 const mockRestaurantName = "Pizza Shop";
